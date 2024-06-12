@@ -1,0 +1,95 @@
+  <h1
+    id="mainHeading"
+    class="display-5 fw-bold text-body-emphasis animate__animated animate__fadeInDown animate__slower"
+  >
+    Welcome to Blog-ogo
+  </h1>
+
+  <script>
+    $(document).ready(function () {
+      const heading = $("#mainHeading");
+
+      // Remove fadeIn and add fadeOut after fadeIn completes
+      heading.on("animationend", function () {
+        if (heading.hasClass("animate__fadeInDown")) {
+          heading
+            .removeClass("animate__fadeInDown")
+            .addClass("animate__fadeOut")
+            .addClass("animate__slower");
+        } 
+      });
+      setTimeout(function() {
+        heading.on("animationend", function () {
+            if (heading.hasClass("animate__fadeOut")) {
+              heading
+              .removeClass("animate__fadeOut")
+              .addClass("animate__fadeIn")
+              .text("Get Started");
+        }
+      });
+    });
+      }, 10000);
+
+  </script>
+
+
+
+
+    <h1
+    id="mainHeading"
+    class="display-5 fw-bold text-body-emphasis animate__animated animate__fadeInDown animate__slower"
+  >
+    Welcome to Blog-ogo
+  </h1>
+
+  <script>
+    $(document).ready(function () {
+      const heading = $("#mainHeading");
+
+      // Remove fadeIn and add fadeOut after fadeIn completes
+      heading.on("animationend", function () {
+        if (heading.hasClass("animate__fadeInDown")) {
+          heading
+            .removeClass("animate__fadeInDown")
+            .addClass("animate__fadeOut");
+        }
+      });
+
+        heading.on("animationend", function () {
+          if (heading.hasClass("animate__fadeOut")) {
+            heading
+              .removeClass("animate__fadeOut")
+              .addClass("animate__fadeIn")
+              .text("Get Started");
+         
+          }
+        });
+      });
+
+  </script>
+
+
+    // fs.access(path, fs.constants.F_OK, (err) => {
+  //   if (err) {
+  //     fs.mkdir(path, (err) => {
+  //       if (err) {
+  //         return console.error(err);
+  //       }
+  //       console.log("Directory created successfully!");
+  //     });
+  //   } else {
+  //     console.log("Readable");
+  //   }
+  // });
+
+
+
+    // fs.access(path, fs.constants.F_OK, (err) => {
+  //   if (!err) {
+  //     //fs.access(path, fs.constants.F_OK);
+  //     fs.writeFile((path + `/info.json`), JSON.stringify(loginData), (err) => {
+  //       if (err) throw err;
+  //       console.log("The file has been saved!");
+  //     });
+  //  }
+  // });

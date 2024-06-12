@@ -1,0 +1,117 @@
+<div class="px-4 py-5 my-5 text-center">
+
+  <!-- <img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/
+        bootstrap-logo.svg" alt="" width="72" height="57"> -->
+
+        <h1 id="heading1" class="display-5 fw-bold text-body-emphasis animate__animated animate__fadeInDown animate__slower">Welcome to Blog-ogo</h1>
+        <h1 id="heading2" class="display-5 fw-bold text-body-emphasis animate__animated animate__slower" style="display: none;">Get Started</h1>
+      
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const heading1 = document.getElementById("heading1");
+            const heading2 = document.getElementById("heading2");
+      
+            // Fade in the first heading
+            heading1.classList.add("animate__fadeIn");
+            
+            // When the fade in animation ends, start fade out
+            heading1.addEventListener('animationend', () => {
+              if (heading1.classList.contains("animate__fadeIn")) {
+                heading1.classList.remove("animate__fadeIn");
+                heading1.classList.add("animate__fadeOut");
+      
+                // When fade out ends, show the second heading
+                heading1.addEventListener('animationend', () => {
+                  heading1.style.display = "none";
+                  heading2.style.display = "block";
+                  heading2.classList.add("animate__fadeIn");
+                });
+              }
+            });
+          });
+        </script>
+
+  <div class="mx-auto">
+    <p class="lead mb-4 my-5">
+     For the ideas waiting to be unleashed - blog anytime, anywhere.
+    </p>
+
+  </div>
+
+
+
+  <div id="signInButtons" class="d-grid gap-2 d-sm-flex justify-content-sm-center my-5" style="display: block;" >
+    <button id="signUpButton" type="button" class="btn btn-primary btn-lg gap-3" style="margin: 10px; padding-left: 15px; padding-right: 15px;">Sign-up</button>
+    <button id="logInButton" type="button" class="btn btn-outline-secondary btn-lg px-4" style="margin: 10px; padding-left: 15px; padding-right: 15px;">Login</button>
+  </div>
+
+
+
+  <div id="signUpForm" class="mx-auto my-5 border rounded hover-enlarge "
+   style="width: 550px; box-shadow: 5px 5px 8px 0px #3d3d3d; display: none;">
+    <div class="p-4">
+
+  <form action="/signUp" method="POST">
+    <div class="mb-3 text-start">
+      <label for="exampleInputEmail1" class="form-label">Choose User ID </label>
+      <input type="text" name="userID" class="form-control" id="userID" required>
+
+      <% if(locals.message) { %>
+      <p role="alert" class="fst-italic" style="color: rgb(179, 3, 3);">*userID already exists*</p>
+      <% } %>
+
+
+    </div>
+    <div class="mb-3 text-start">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" name="password" class="form-control" id="password" required>
+    </div>
+    <button type="signUp" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
+
+<div id="logInForm" class="mx-auto my-5 border rounded hover-enlarge "
+style="width: 550px; box-shadow: 5px 5px 8px 0px #3d3d3d; display: none;">
+ <div class="p-4">
+<form action="/logIn" method="POST">
+ <div class="mb-3 text-start">
+   <label for="exampleInputEmail1" class="form-label"> User ID </label>
+   <input type="text" name="userID" class="form-control" id="userID" required>
+ </div>
+ <div class="mb-3 text-start">
+   <label for="exampleInputPassword1" class="form-label">Password</label>
+   <input type="password" name="password" class="form-control" id="password" required>
+ </div>
+ <button type="logIn" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+
+
+<script>
+  document.getElementById('signUpButton').addEventListener('click', function() {
+  document.getElementById('signUpForm').style.display = 'block';
+  document.getElementById('signUpButton').style.display = 'none';
+  document.getElementById('logInButton').style.display = 'block';
+  document.getElementById('logInForm').style.display = 'none';
+  });
+
+  document.getElementById('logInButton').addEventListener('click', function() {
+  document.getElementById('logInForm').style.display = 'block';
+  document.getElementById('logInButton').style.display = 'none';
+  document.getElementById('signUpButton').style.display = 'block';
+  document.getElementById('signUpForm').style.display = 'none';
+  });
+
+</script>
+
+
+
+
+<p class="fst-italic fw-semibold " 
+style="position: fixed; width: 100%; bottom: 150px;">PS: your data is safer here than on facebook</p>
+
+</div>
+
+
